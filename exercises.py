@@ -72,8 +72,13 @@ apply_discount(100, 25)
 #
 # Define the function and then call it below.
 
-def convert_temperature(celsius, farenheit):
-    return 
+def convert_temperature(temp, unit):
+    if unit == 'C':
+        return (temp * 9/5) + 32
+    elif unit == 'F':
+        return (temp - 32) * 5/9
+    else:    
+        return "invalid unit entered"
 
 print('Exercise 4: Convert 0°C to Fahrenheit:', convert_temperature(0, 'C'))
 print('Exercise 4: Convert 32°F to Celsius:', convert_temperature(32, 'F'))
@@ -110,15 +115,12 @@ print('Exercise 5:', sum_to(6))
 # Define your function and test it with different inputs.
 
 def largest(num1, num2, num3):
-    nums - [ num2, num3]
-    max = num1 
-    for num in nums: 
-        if num > max: 
-            max = num 
-    return max
-
-    for largest in nums: 
-        print(name)
+    if num1 > num2 and num1 > num3:
+        return num1
+    elif num2 > num1 and num2 > num3:
+        return num2
+    else:
+        return num3 
 
 print('Exercise 6:', largest(1, 2, 3))
 
@@ -134,6 +136,8 @@ print('Exercise 6:', largest(1, 2, 3))
 #
 # Write your function and test its output below.
 
+def calculate_tip(bill, tip):
+    return (bill * (tip / 100))
 
 
 print('Exercise 7:', calculate_tip(50, 20))
@@ -172,6 +176,10 @@ print('Exercise 8:', product(2, 5, 5))
 #
 # Define the function and then call it below.
 
-
+def product(*args):
+    the_product = 1
+    for arg in args: 
+        the_product *= arg
+    return the_product 
 
 print('Exercise 9 Result:', basic_calculator(10, 5, "subtract"))
